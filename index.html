@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es" style="background:#070310">
+<head>
+<style>@font-face{font-family:Cinzel;font-style:normal;font-display:swap;font-weight:600;font-display:swap;src:url(fonts/font_0.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Cinzel;font-style:normal;font-display:swap;font-weight:700;font-display:swap;src:url(fonts/font_1.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Manrope;font-style:normal;font-display:swap;font-weight:400;font-display:swap;src:url(fonts/font_2.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Manrope;font-style:normal;font-display:swap;font-weight:500;font-display:swap;src:url(fonts/font_3.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Manrope;font-style:normal;font-display:swap;font-weight:600;font-display:swap;src:url(fonts/font_4.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Manrope;font-style:normal;font-display:swap;font-weight:700;font-display:swap;src:url(fonts/font_5.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aether Solutions — Distribuidora y tienda premium de péptidos en Colombia. Compuestos de alta pureza con asesoría personalizada por WhatsApp.">
+<title>Aether Solutions · Péptidos Premium · Colombia</title>
+<!-- Preloader crítico: muestra fondo oscuro y pantalla de carga de inmediato -->
+<style>body,html{background:#070310;margin:0;padding:0}#preloader{position:fixed;inset:0;z-index:9999;background:radial-gradient(ellipse at center,#1a0a30 0,#0a0418 50%,#050210 100%);display:flex;align-items:center;justify-content:center}#preloader-logo-inner{width:90px;height:90px;border-radius:50%;background:url('img/img_0.webp') center/cover no-repeat #070310;border:2px solid rgba(244,201,93,.5);box-shadow:0 0 28px rgba(168,85,247,.5)}#preloader-text{font-family:Georgia,serif;font-size:17px;letter-spacing:.4em;color:#f4c95d;text-align:center;margin-top:18px;text-shadow:0 0 16px rgba(244,201,93,.5)}#preloader-sub{font-family:Arial,sans-serif;font-size:8px;letter-spacing:.6em;color:rgba(232,228,240,.5);display:block;margin-top:5px}#preloader-bar{width:160px;height:1.5px;background:rgba(244,201,93,.15);margin:20px auto 0;border-radius:2px;overflow:hidden}#preloader-bar::after{content:"";display:block;height:100%;width:0;background:linear-gradient(90deg,#a855f7,#f4c95d);animation:2s ease-out forwards pbar}@keyframes pbar{0%{width:0}60%{width:75%}100%{width:100%}}</style>
+<link id="main-css" rel="stylesheet" href="style.css" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="style.css"></noscript>
+</head>
+<body class="loading">
+
+<!-- ============== PRELOADER ============== -->
+<div id="preloader" aria-hidden="true">
+  <div style="display:flex;flex-direction:column;align-items:center">
+    <div id="preloader-logo-inner"></div>
+    <div id="preloader-text">AETHER<span id="preloader-sub">SOLUTIONS</span></div>
+    <div id="preloader-bar"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var pre=document.getElementById('preloader');
+  var cssOk=false,domOk=false,gone=false;
+  function hidePre(){
+    if(gone)return;gone=true;
+    if(!pre)return;
+    pre.style.transition='opacity .8s ease,visibility .8s';
+    pre.style.opacity='0';pre.style.visibility='hidden';
+    document.body.classList.remove('loading');
+    setTimeout(function(){if(pre&&pre.parentNode)pre.parentNode.removeChild(pre);},900);
+  }
+  function tryHide(){if(cssOk&&domOk)setTimeout(hidePre,300);}
+  var lnk=document.getElementById('main-css');
+  if(!lnk||lnk.media==='all'){cssOk=true;}
+  else{lnk.addEventListener('load',function(){cssOk=true;tryHide();});}
+  if(document.readyState==='complete'||document.readyState==='interactive'){domOk=true;tryHide();}
+  else{document.addEventListener('DOMContentLoaded',function(){domOk=true;tryHide();});}
+  setTimeout(hidePre,5000);
+})();
+</script>
+
+<div class="bg-orbs"><span></span></div>
+<div class="bg-grid"></div>
+
+<!-- ============== NAV ============== -->
+<nav class="nav" id="nav">
+  <a href="#top" class="brand">
+    <div class="brand-mark"></div>
+    <div>
+      AETHER
+      <span class="brand-sub">SOLUTIONS</span>
+    </div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#beneficios">Beneficios</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#destacados">Destacados</a>
+    <a href="#confianza">Confianza</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="nav-quick-link" href="#catalogo" aria-label="Ir al catálogo">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Catálogo
+    </a>
+    <button class="cart-btn" onclick="toggleCart()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path></svg>
+      Carrito
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span></button>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<header class="hero" id="top">
+  <div class="hero-content">
+    <div class="eyebrow">Péptidos premium · Colombia</div>
+    <h1>Ciencia, pureza y poder en cada vial. <span class="accent">Aether Solutions.</span></h1>
+    <p class="lead">Distribuidora oficial de péptidos de investigación de alta pureza. Desde Pitalito (Huila) llegamos a toda Colombia con calidad garantizada, asesoría experta y atención inmediata por WhatsApp.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" id="heroWA" href="#" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.6.953-1.001 3.668 3.78-.99zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+        Asesoría inmediata
+      </a>
+      <a class="btn btn-ghost" href="#catalogo">Ver catálogo</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>+30</strong><span>Productos</span></div>
+      <div class="stat"><strong>99%</strong><span>Pureza</span></div>
+      <div class="stat"><strong>24/7</strong><span>Atención</span></div>
+    </div>
+  </div>
+  <div class="hero-showcase">
+    <div class="showcase-stage" id="showcaseStage" data-theme="gold">
+      <div class="showcase-aura"></div>
+      <div class="showcase-orb-bg"></div>
+      <div class="showcase-podium"></div>
+      <div class="showcase-particles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="showcase-deck">
+        <article class="showcase-slide is-active" data-theme="gold" data-name="Glow Stack" data-meta="Premium Stack &middot; 70 mg"><img loading="lazy" class="showcase-slide-img" src="img/img_1.webp" alt="Glow Stack" decoding="async" fetchpriority="high">></article>
+        <article class="showcase-slide" data-theme="purple" data-name="Retatrutide" data-meta="Triple agonista GLP &middot; 10 mg"><img loading="lazy" class="showcase-slide-img" src="img/img_2.webp" alt="Retatrutide" decoding="async">></article>
+        <article class="showcase-slide" data-theme="green" data-name="BPC-157 + TB-500" data-meta="Stack regenerativo &middot; 20 mg"><img loading="lazy" class="showcase-slide-img" src="img/img_3.webp" alt="BPC-157 + TB-500" decoding="async">></article>
+      </div>
+      <div class="showcase-caption">
+        <span class="showcase-name" id="showcaseName">Glow Stack</span>
+        <span class="showcase-meta" id="showcaseMeta">Premium Stack &middot; 70 mg</span>
+      </div>
+      <div class="showcase-dots" id="showcaseDots">
+        <button class="showcase-dot is-active" type="button" aria-label="Glow Stack" data-i="0"></button>
+        <button class="showcase-dot" type="button" aria-label="Retatrutide" data-i="1"></button>
+        <button class="showcase-dot" type="button" aria-label="BPC-157 + TB-500" data-i="2"></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============== FEATURED (now visible first) ============== -->
+<section id="destacados" class="featured">
+  <div class="ambient-dust"></div>
+  <div class="section-head reveal">
+        <div class="scene-divider">
+      <div class="scene-divider-line"></div>
+      <div class="scene-divider-orn"></div>
+      <div class="scene-divider-line"></div>
+    </div>
+    <div class="eyebrow">Más vendidos</div>
+    <h2>Productos <span class="accent">destacados</span></h2>
+    <p>Los favoritos de nuestros clientes — desliza para descubrirlos.</p>
+  </div>
+  <div class="featured-wrap">
+    <button class="featured-nav prev" aria-label="Anterior" id="featPrev">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="featured-grid" id="featuredGrid"></div>
+    <button class="featured-nav next" aria-label="Siguiente" id="featNext">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+  <div class="featured-swipe-hint">← Desliza para explorar →</div>
+</section>
+
+<!-- ============== BENEFITS ============== -->
+<section id="beneficios">
+  <div class="ambient-dust"></div>
+  <div class="section-head reveal">
+        <div class="scene-divider">
+      <div class="scene-divider-line"></div>
+      <div class="scene-divider-orn"></div>
+      <div class="scene-divider-line"></div>
+    </div>
+    <div class="eyebrow">¿Por qué Aether?</div>
+    <h2>Más que productos: <span class="accent">una experiencia premium</span></h2>
+    <p>Todo lo que buscas en un proveedor confiable de péptidos: calidad, atención y rapidez en un mismo lugar.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit reveal">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9.4-8 10-4.5-.6-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <h3>Calidad Garantizada</h3>
+      <p>Compuestos de alta pureza con estándares certificados para resultados confiables.</p>
+    </div>
+    <div class="benefit reveal">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      </div>
+      <h3>Variedad Premium</h3>
+      <p>Más de 30 péptidos: GLP, GH, regeneración, vitalidad y bienestar integral.</p>
+    </div>
+    <div class="benefit reveal">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+      </div>
+      <h3>Compra Fácil</h3>
+      <p>Agrega al carrito, completa tus datos y envía tu pedido al instante por WhatsApp.</p>
+    </div>
+    <div class="benefit reveal">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      </div>
+      <h3>Atención Personalizada</h3>
+      <p>Resolvemos tus dudas por WhatsApp. Asesoría profesional antes y después de tu compra.</p>
+    </div>
+    <div class="benefit reveal">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <h3>Envíos a Todo Colombia</h3>
+      <p>Despachamos desde Pitalito (Huila) con despacho ágil y seguimiento en tiempo real.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CATALOG (discovery-based) ============== -->
+<section id="catalogo">
+  <div class="ambient-dust"></div>
+  <div class="section-head reveal">
+        <div class="scene-divider">
+      <div class="scene-divider-line"></div>
+      <div class="scene-divider-orn"></div>
+      <div class="scene-divider-line"></div>
+    </div>
+    <div class="eyebrow">Catálogo completo</div>
+    <h2>Explora por <span class="accent">categoría</span></h2>
+    <p>Selecciona una línea para descubrir los compuestos disponibles. Cada categoría tiene su propia experiencia visual.</p>
+  </div>
+  <div class="filters reveal" id="filters" role="tablist" aria-label="Categorías de productos">
+    <button class="filter-btn" data-filter="metabolico" role="tab" aria-selected="false"><span class="dot"></span>Pérdida de grasa</button>
+    <button class="filter-btn" data-filter="muscular" role="tab" aria-selected="false"><span class="dot"></span>Crecimiento muscular</button>
+    <button class="filter-btn" data-filter="regen" role="tab" aria-selected="false"><span class="dot"></span>Regeneración &amp; wellness</button>
+    <button class="filter-btn" data-filter="otros" role="tab" aria-selected="false"><span class="dot"></span>Otros péptidos</button>
+    <button class="filter-btn" data-filter="agua" role="tab" aria-selected="false"><span class="dot"></span>Agua bacteriostática</button>
+  </div>
+  <div class="catalog-viewport" id="catalogViewport">
+    <div class="catalog-empty" id="catalogEmpty">
+      <div class="catalog-empty-orb"><span class="orb-aura" aria-hidden="true"><span class="orb-aura-pulse orb-aura-pulse-1"></span><span class="orb-aura-pulse orb-aura-pulse-2"></span><span class="orb-aura-glow"></span></span><span class="orb-sphere"><span class="orb-mist"></span><span class="orb-beam"></span><div class="orb-sword"><div class="orb-sword-flow"></div><svg viewBox="0 0 60 200" aria-hidden="true"><path d="M30 6 L36 100 L30 194 L24 100 Z" fill="rgba(168,85,247,.35)" stroke="rgba(236,228,255,.85)" stroke-width=".7"/><line x1="30" y1="14" x2="30" y2="186" stroke="rgba(255,255,255,.75)" stroke-width=".4"/><path d="M22 192 L38 192" stroke="rgba(196,165,255,.85)" stroke-width="1.4" stroke-linecap="round"/></svg></div><span class="orb-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span></div>
+      <h3>Descubre nuestro <span class="accent">catálogo completo</span></h3>
+      <p>Más de 30 péptidos premium organizados por objetivo. Selecciona una categoría arriba para revelar los productos disponibles.</p>
+      <div class="catalog-empty-hint">Toca una categoría</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TRUST ============== -->
+<section id="confianza" class="trust">
+  <div class="ambient-dust"></div>
+  <div class="section-head reveal">
+        <div class="scene-divider">
+      <div class="scene-divider-line"></div>
+      <div class="scene-divider-orn"></div>
+      <div class="scene-divider-line"></div>
+    </div>
+    <div class="eyebrow">Confianza · Seguridad · Agilidad</div>
+    <h2>Compra <span class="accent">fácil y segura</span></h2>
+    <p>Cuidamos cada detalle de tu pedido para que tu experiencia sea impecable.</p>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-item reveal">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <div class="trust-text"><h4>Pago Seguro</h4><p>Confirmamos cada pedido por WhatsApp antes del despacho. Cero sorpresas.</p></div>
+    </div>
+    <div class="trust-item reveal">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="trust-text"><h4>Productos Disponibles</h4><p>Stock permanente. Confirmamos disponibilidad al momento de tu pedido.</p></div>
+    </div>
+    <div class="trust-item reveal">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div class="trust-text"><h4>Atención Personalizada</h4><p>Acompañamiento profesional desde la consulta hasta la entrega del producto.</p></div>
+    </div>
+    <div class="trust-item reveal">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      </div>
+      <div class="trust-text"><h4>Envíos Ágiles</h4><p>Despachos rápidos y seguros a toda Colombia con seguimiento en tiempo real.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA FINAL ============== -->
+<section id="contacto" class="cta-final">
+  <div class="ambient-dust"></div>
+  <div class="reveal section-head" style="margin:0 auto;max-width:780px;padding:0">
+        <div class="scene-divider">
+      <div class="scene-divider-line"></div>
+      <div class="scene-divider-orn"></div>
+      <div class="scene-divider-line"></div>
+    </div>
+    <h2>¿Listo para llevar tu rendimiento <span class="accent">al siguiente nivel?</span></h2>
+    <p>Escríbenos por WhatsApp y recibe asesoría inmediata sobre el péptido ideal para tus objetivos.</p>
+    <a class="btn btn-primary btn-xl" id="ctaWA" href="#" target="_blank" rel="noopener">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.6.953-1.001 3.668 3.78-.99zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+      Escríbenos por WhatsApp
+    </a>
+  </div>
+</section>
+
+
+<!-- ============== PRONUSA PARTNER SECTION ============== -->
+<section id="aliados" class="pronusa-section">
+  <div class="pronusa-wave"></div>
+  <div class="pronusa-inner reveal">
+    <div class="pronusa-img-wrap">
+      <img src="img/pronusa-promo.webp" alt="Oferta Pronusa Suplementos — Retatrutide PrimeHack + Whey Gourmet o Creatine Gratis" loading="lazy" width="1254" height="1254">
+    </div>
+    <div class="pronusa-info">
+      <span class="pronusa-eyebrow">Aliado Comercial</span>
+      <h2>Pronusa <span class="accent">Suplementos</span></h2>
+      <p>Nuestro aliado estratégico en suplementación alimenticia y deportiva. Potencia tu protocolo de péptidos con los mejores suplementos del mercado.</p>
+      <div class="pronusa-offer-box">
+        <span class="pronusa-offer-title">🎁 Oferta exclusiva · Retatrutide 10mg PrimeHack</span>
+        <div style="display:flex;align-items:baseline;gap:8px;margin:2px 0">
+          <span style="font-family:'Cinzel',serif;font-size:26px;font-weight:700;color:var(--white)">$750.000</span>
+          <span style="font-size:11px;color:var(--muted);letter-spacing:.1em">COP</span>
+        </div>
+        <p>Por la compra de Retatrutide 10mg PrimeHack, recibe de regalo:<br>
+        <strong style="color:var(--white)">Whey Gourmet Series 2 lbs</strong><br>
+        <small style="color:var(--muted);font-size:11px">⚠ Aplica por unidad adquirida · Sujeto a disponibilidad</small></p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <a href="https://wa.me/573218515617?text=Hola%2C%20quiero%20el%20COMBO%3A%20Retatrutide%2010mg%20PrimeHack%20(%24750.000)%20%2B%20Whey%20Gourmet%20Series%202%20lbs%20GRATIS%20(alianza%20Pronusa).%20%C2%BFC%C3%B3mo%20aplica%20la%20oferta%3F" target="_blank" rel="noopener noreferrer"
+          style="display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:13px;
+          background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;font-weight:700;font-size:14px;
+          text-decoration:none;transition:all .3s;box-shadow:0 8px 22px -8px rgba(37,211,102,.45);">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
+          Consultar Combo
+        </a>
+        <a href="https://www.pronusasuplementos.com/pagina/pagina-principal?lang=es" target="_blank" rel="noopener noreferrer" class="pronusa-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Visitar Pronusa
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="brand-mark"></div>
+        <div style="font-family:'Cinzel',serif;letter-spacing:.18em;color:#fff;font-weight:700">AETHER<br><span style="font-family:'Manrope',sans-serif;font-weight:400;letter-spacing:.35em;font-size:9px;color:var(--gold-1)">SOLUTIONS</span></div>
+      </div>
+      <p>Distribuidora y tienda de péptidos premium. Pitalito · Huila · Colombia.</p>
+      <div class="social">
+        <a href="https://www.instagram.com/aethersolutions.col" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a id="footWA" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h5>Catálogo</h5>
+      <a href="#catalogo">Pérdida de grasa / Metabólicos</a>
+      <a href="#catalogo">Desarrollo Muscular</a>
+      <a href="#catalogo">Regeneración / Wellness</a>
+      <a href="#catalogo">Otros péptidos</a>
+    </div>
+    <div>
+      <h5>Información</h5>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#confianza">Confianza</a>
+      <a href="#destacados">Destacados</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div>
+      <h5>Contacto</h5>
+      <p>WhatsApp: 314 261 7708</p>
+      <p>Pitalito · Huila</p>
+      <p>Colombia 🇨🇴</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Aether Solutions · Todos los derechos reservados.</span>
+    <span>Productos para investigación · No aprobados por la FDA para diagnóstico, tratamiento, cura o prevención.</span>
+    <span>La información y asesoría brindada no reemplaza una valoración médica profesional. Consulte siempre con un especialista antes de suplementarse.</span>
+  </div>
+</footer>
+
+<!-- ============== CART DRAWER ============== -->
+<div class="overlay" id="overlay" onclick="closeCart();closeCheckout()"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="drawer-head">
+    <h3>TU CARRITO</h3>
+    <button class="drawer-close" onclick="closeCart()" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="summary"><span>Productos</span><span id="cartSubItems">0 ítem(s)</span></div>
+    <div class="total-row">
+      <span>Total</span>
+      <strong id="cartTotal">$0<em>COP</em></strong>
+    </div>
+    <button class="checkout-btn" id="checkoutBtn" onclick="openCheckout()" disabled>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
+      Finalizar pedido
+    </button>
+    <button class="continue-btn" onclick="closeCart()">← Seguir comprando</button>
+  </div>
+</aside>
+
+<!-- ============== PRODUCT DETAIL OVERLAY ============== -->
+<div class="detail-overlay" id="detailOverlay" role="dialog" aria-modal="true" aria-labelledby="detailName">
+  <div class="detail-panel">
+    <button class="detail-close" onclick="closeDetail()" aria-label="Cerrar detalle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="detail-inner">
+      <!-- Visual side -->
+      <div class="detail-visual">
+        <div class="detail-img-wrap">
+          <img loading="lazy" id="detailImg" class="detail-img" src="" alt="" width="200" height="260">>
+          <div class="detail-img-glow"></div>
+        </div>
+        <span class="detail-tag-badge" id="detailBadge"></span>
+      </div>
+      <!-- Info side -->
+      <div class="detail-info">
+        <div>
+          <div class="detail-present" id="detailPresent"></div>
+          <h2 class="detail-name" id="detailName"></h2>
+        </div>
+        <div class="detail-price-row">
+          <div class="detail-price" id="detailPrice"></div>
+          <small style="font-size:11px;color:var(--muted)">COP</small>
+        </div>
+        <div class="detail-divider"></div>
+        <!-- Tabs -->
+        <div class="detail-tabs" id="detailTabs">
+          <button class="detail-tab active" data-tab="desc">Descripción</button>
+          <button class="detail-tab" data-tab="mec">Mecanismo</button>
+          <button class="detail-tab" data-tab="prot">Protocolo</button>
+        </div>
+        <div class="detail-tab-content">
+          <div class="detail-pane active" id="tabDesc"></div>
+          <div class="detail-pane" id="tabMec"></div>
+          <div class="detail-pane" id="tabProt"></div>
+        </div>
+        <!-- Benefits -->
+        <ul class="detail-benefits" id="detailBenefits"></ul>
+        <!-- Stack -->
+        <div class="detail-stack-row" id="detailStackRow" style="display:none">
+          <span class="detail-stack-label">💊 Combina bien con</span>
+          <span class="detail-stack-val" id="detailStackVal"></span>
+        </div>
+        <!-- Nota científica -->
+        <div class="detail-nota" id="detailNota" style="display:none">
+          <strong>💡 Dato científico</strong>
+          <span id="detailNotaVal"></span>
+        </div>
+        <div class="detail-divider"></div>
+        <!-- Actions -->
+        <div class="detail-actions">
+          <button class="detail-cart-btn" id="detailCartBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            Agregar al carrito
+          </button>
+          <a class="detail-wa-btn" id="detailWaBtn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
+            Consultar
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============== CHECKOUT MODAL ============== -->
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true">
+  <div class="modal-content">
+    <div class="modal-head">
+      <h3>Datos de envío</h3>
+      <button class="drawer-close" onclick="closeCheckout()" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <p class="modal-sub">Completa tus datos y enviaremos tu pedido directamente por WhatsApp para coordinar el pago y el envío.</p>
+    <form id="checkoutForm" onsubmit="enviarPedido(event)">
+      <div class="field">
+        <label>Nombre completo<span class="required-mark">*</span></label>
+        <input type="text" id="f_nombre" required placeholder="Ej: Andrés Pérez">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Teléfono<span class="required-mark">*</span></label>
+          <input type="tel" id="f_telefono" required placeholder="Ej: 3142617708">
+        </div>
+        <div class="field">
+          <label>Cédula</label>
+          <input type="text" id="f_cedula" placeholder="Opcional">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Ciudad<span class="required-mark">*</span></label>
+          <input type="text" id="f_ciudad" required placeholder="Ej: Bogotá">
+        </div>
+        <div class="field">
+          <label>Departamento<span class="required-mark">*</span></label>
+          <input type="text" id="f_departamento" required placeholder="Ej: Cundinamarca">
+        </div>
+      </div>
+      <div class="field">
+        <label>Dirección de envío<span class="required-mark">*</span></label>
+        <input type="text" id="f_direccion" required placeholder="Calle, carrera, barrio, complemento...">
+      </div>
+      <div class="field">
+        <label>Notas adicionales</label>
+        <textarea id="f_notas" placeholder="Indica si tienes alguna preferencia para el envío o asesoría sobre dosificación..."></textarea>
+      </div>
+      <div class="modal-summary" id="modalSummary"></div>
+      <button type="submit" class="checkout-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
+        Enviar pedido por WhatsApp
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- FAB WhatsApp -->
+<a class="fab" id="fabWA" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.6.953-1.001 3.668 3.78-.99zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+  <span id="toastMsg">Producto añadido al carrito</span>
+</div>
+
+
+<script src="app.js" defer></script>
+</body>
+</html>

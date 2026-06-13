@@ -1,0 +1,26 @@
+# Dependencias
+node_modules/
+
+# Configs de deploy (se regeneran)
+.netlify
+.vercel
+
+# Archivos de Claude
+.claude/
+
+# Imágenes originales sin optimizar (en la raíz)
+*.jfif
+*.JFIF
+nuevo producto.png
+producto nuevo 2.png
+
+# Carpetas de imágenes originales (ya están optimizadas en img/)
+productos/
+productos_opt/
+productos_png/
+productos_webp/
+assets/
+
+# Archivos de trabajo locales
+compress-images.js
+package-lock.json
