@@ -67,7 +67,7 @@ const PRODUCTS = [
   // OTROS
   {id:'melanotan', cat:'otros', tag:'Bronceado', nombre:'Melanotan II', presentacion:'10 mg / vial', precio:150000, img:IMG_DATA['melanotan'], desc:'Análogo melanocortínico que favorece el bronceado y puede influir sobre apetito y libido.'},
   {id:'pt141', cat:'otros', tag:'Vitalidad', nombre:'PT-141', presentacion:'10 mg / vial', precio:250000, img:IMG_DATA['pt141'], desc:'Péptido enfocado en deseo y función sexual mediante activación de receptores melanocortínicos.'},
-  {id:'nadplus', cat:'otros', tag:'Anti-edad', nombre:'NAD+', presentacion:'500 mg / vial', precio:320000, img:IMG_DATA['nadplus'], desc:'Coenzima esencial para producción de energía celular, función mitocondrial y soporte antiedad.'},
+  {id:'nadplus', cat:'longevidad', tag:'Anti-edad', nombre:'NAD+', presentacion:'500 mg / vial', precio:320000, img:IMG_DATA['nadplus'], desc:'Coenzima esencial para producción de energía celular, función mitocondrial y soporte antiedad.'},
   {id:'kisspeptin', cat:'otros', tag:'Hormonal', nombre:'Kisspeptin-10', presentacion:'10 mg / vial', precio:250000, img:IMG_DATA['kisspeptin'], desc:'Péptido relacionado con regulación hormonal y estimulación del eje reproductivo.'},
 
   // ============ LINEA PRIMEHACK · CAJAS PREMIUM ============
@@ -76,7 +76,7 @@ const PRODUCTS = [
   {id:'tesamorelin_box', cat:'metabolico', tag:'Caja Premium', nombre:'Tesamorelin GHRH', presentacion:'Caja · 10 mg / vial', precio:455000, img:IMG_DATA['tesamorelin_box'], desc:'Análogo de GHRH en caja premium. Estimula la liberación natural de hormona de crecimiento y favorece la reducción de grasa visceral.'},
   {id:'ghkcu_box', cat:'regen', tag:'Caja Premium', nombre:'GHK-CU Tripeptide', presentacion:'Caja · 50 mg / vial', precio:350000, img:IMG_DATA['ghkcu_box'], desc:'Péptido regenerativo con cobre en caja premium. Asociado a producción de colágeno, reparación tisular y salud de piel y cabello.', destacado:true},
   {id:'bpc_tb_box', cat:'regen', tag:'Caja Premium', nombre:'BPC 157 + TB 500 REGEN', presentacion:'Caja · 10 mg / vial', precio:400000, img:IMG_DATA['bpc_tb_box'], desc:'Stack regenerativo en caja premium. Orientado a recuperación muscular, tendinosa y reparación de tejidos.', destacado:true},
-  {id:'nad_box', cat:'otros', tag:'Caja Premium', nombre:'NAD+ REDOX', presentacion:'Caja · 500 mg / vial', precio:320000, img:IMG_DATA['nad_box'], desc:'Coenzima NAD+ en caja premium. Esencial para producción de energía celular, función mitocondrial y soporte antiedad.', destacado:true},
+  {id:'nad_box', cat:'longevidad', tag:'Caja Premium', nombre:'NAD+ REDOX', presentacion:'Caja · 500 mg / vial', precio:320000, img:IMG_DATA['nad_box'], desc:'Coenzima NAD+ en caja premium. Esencial para producción de energía celular, función mitocondrial y soporte antiedad.', destacado:true},
 
   // AGUA BACTERIOSTATICA
   {id:'bacwater_3ml', cat:'agua', tag:'Diluyente', nombre:'BAC Water', presentacion:'3 ml', precio:20000, img:IMG_DATA['bacwater_3ml'], desc:'Agua estéril con conservante para reconstituir tus péptidos de forma segura.'},
@@ -154,9 +154,14 @@ const CAT_META = {
     sub:'Cicatrización, articulaciones, piel y colágeno',
     icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>'
   },
+  longevidad: {
+    label:'Longevidad / Anti-edad',
+    sub:'NAD⁺, energía celular, mitocondrias y sirtuinas',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></svg>'
+  },
   otros: {
     label:'Otros péptidos',
-    sub:'Vitalidad, hormonal, anti-edad y estética',
+    sub:'Vitalidad, hormonal y estética',
     icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>'
   },
   agua: {
