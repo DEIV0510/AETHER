@@ -91,7 +91,7 @@ const PRODUCTS = [
   {id:'klow_80mg', cat:'regen', tag:'Recuperación', nombre:'Klow', presentacion:'80 mg / vial', precio:850000, img:'img/klow-80mg.webp', desc:'Blend peptídico enfocado en recuperación, soporte tisular y balance celular.'},
   {id:'selank_10mg', cat:'neuro', tag:'Calma', nombre:'Selank', presentacion:'10 mg / vial', precio:380000, img:'img/selank-10mg.webp', desc:'Péptido enfocado en calma mental, regulación del estrés y soporte cognitivo suave.'},
   {id:'semax_10mg', cat:'neuro', tag:'Nootrópico', nombre:'Semax', presentacion:'10 mg / vial', precio:480000, img:'img/semax-10mg.webp', desc:'Péptido nootrópico enfocado en memoria, enfoque, claridad mental y soporte neurológico.'},
-  {id:'cjc_ipamorelin', cat:'muscular', tag:'GH-Sec', nombre:'CJC-1295 + Ipamorelin', presentacion:'10 mg / vial', precio:700000, img:'img/cjc-ipamorelin-10mg.webp', desc:'Combinación enfocada en pulsos de GH, recuperación, descanso y soporte de composición corporal.'},
+  {id:'cjc_ipamorelin', cat:'muscular', tag:'GH-Sec', nombre:'CJC-1295 + Ipamorelin', presentacion:'10 mg / vial', precio:700000, img:'img/cjc-ipamorelin-10mg-v2.webp', desc:'Combinación enfocada en pulsos de GH, recuperación, descanso y soporte de composición corporal.'},
   {id:'epithalon_box', cat:'longevidad', tag:'Caja Premium', nombre:'Epithalon PrimeHack', presentacion:'Caja · 50 mg / vial', precio:900000, img:'img/epithalon-primehack-50mg.webp', desc:'Versión premium de Epithalon enfocada en longevidad, reparación celular y soporte de ciclos biológicos.'}
 ];
 
