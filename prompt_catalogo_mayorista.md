@@ -73,6 +73,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 |---|---|---|---|
 | IGF-1 LR3 | 1 mg / vial | $246.400 | $320.000 |
 | Ipamorelin | 10 mg / vial | $192.500 | $250.000 |
+| Ipamorelin PrimeHack (caja) | 5 mg | — | $305.000 |
 | CJC-1295 Without DAC | 5 mg / vial | $192.500 | $250.000 |
 | GHRP-6 | 5 mg / vial | $78.000 | $100.000 |
 | GHRP-2 | 5 mg / vial | $78.000 | $100.000 |
