@@ -106,10 +106,10 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 
 | Producto | Presentación | Mayorista | Público |
 |---|---|---|---|
-| BAC Water | 3 ml | $15.400 | $20.000 |
-| BAC Water | 5 ml | $19.250 | $25.000 |
-| BAC Water | 10 ml | $38.500 | $50.000 |
-| BAC Water | 20 ml | $53.900 | $70.000 |
+| BAC Water | 3 ml | $30.800 | $40.000 |
+| BAC Water | 5 ml | $46.200 | $60.000 |
+| BAC Water | 10 ml | $61.600 | $80.000 |
+| BAC Water | 20 ml | $115.500 | $150.000 |
 
 **Página final — Contacto y cierre**
 - Logo circular grande

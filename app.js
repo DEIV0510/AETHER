@@ -80,10 +80,10 @@ const PRODUCTS = [
   {id:'nad_box', cat:'longevidad', tag:'Caja Premium', nombre:'NAD+ REDOX', presentacion:'Caja · 500 mg / vial', precio:320000, img:IMG_DATA['nad_box'], desc:'Coenzima NAD+ en caja premium. Esencial para producción de energía celular, función mitocondrial y soporte antiedad.', destacado:true},
 
   // AGUA BACTERIOSTATICA
-  {id:'bacwater_3ml', cat:'agua', tag:'Diluyente', nombre:'BAC Water', presentacion:'3 ml', precio:20000, img:IMG_DATA['bacwater_3ml'], desc:'Agua estéril con conservante para reconstituir tus péptidos de forma segura.'},
-  {id:'bacwater_5ml', cat:'agua', tag:'Diluyente', nombre:'BAC Water', presentacion:'5 ml', precio:25000, img:IMG_DATA['bacwater_5ml'], desc:'Presentación de 5 ml. Esencial para una correcta dilución y conservación.'},
-  {id:'bacwater_10ml', cat:'agua', tag:'Diluyente', nombre:'BAC Water', presentacion:'10 ml', precio:50000, img:IMG_DATA['bacwater_10ml'], desc:'Mayor capacidad para protocolos extendidos o múltiples viales.'},
-  {id:'bacwater_20ml', cat:'agua', tag:'Diluyente', nombre:'BAC Water', presentacion:'20 ml', precio:70000, img:IMG_DATA['bacwater_20ml'], desc:'La presentación más completa. Ideal para usuarios frecuentes.'},
+  {id:'bacwater_3ml', cat:'agua', tag:'Diluyente', nombre:'BAC Water', presentacion:'3 ml', precio:40000, img:IMG_DATA['bacwater_3ml'], desc:'Agua estéril con conservante para reconstituir tus péptidos de forma segura.'},
+  {id:'bacwater_5ml', cat:'agua', tag:'Diluyente', nombre:'BAC Water', presentacion:'5 ml', precio:60000, img:IMG_DATA['bacwater_5ml'], desc:'Presentación de 5 ml. Esencial para una correcta dilución y conservación.'},
+  {id:'bacwater_10ml', cat:'agua', tag:'Diluyente', nombre:'BAC Water', presentacion:'10 ml', precio:80000, img:IMG_DATA['bacwater_10ml'], desc:'Mayor capacidad para protocolos extendidos o múltiples viales.'},
+  {id:'bacwater_20ml', cat:'agua', tag:'Diluyente', nombre:'BAC Water', presentacion:'20 ml', precio:150000, img:IMG_DATA['bacwater_20ml'], desc:'La presentación más completa. Ideal para usuarios frecuentes.'},
 
   // ============ PRODUCTOS NUEVOS (2026) ============
   {id:'epithalon_50mg', cat:'longevidad', tag:'Longevidad', nombre:'Epithalon', presentacion:'50 mg / vial', precio:750000, img:'img/epithalon-50mg.webp', desc:'Péptido asociado a protocolos de longevidad celular, regulación circadiana, reparación biológica nocturna y soporte de procesos relacionados con envejecimiento saludable.'},
