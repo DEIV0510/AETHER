@@ -336,11 +336,11 @@ function renderFeatured(){
         <h3>Retatrutide <span style="color:var(--gold-1)">10mg</span></h3>
         <span class="feat-promo-free">🎁 + Whey Gourmet 2 lbs GRATIS</span>
         <p>Por tu compra de Retatrutide 10mg PrimeHack, recibe de regalo una Whey Gourmet Series 2 lbs — en alianza con Pronusa Suplementos.</p>
-        <div class="price" style="font-size:22px;margin-top:4px">$750.000 <small>COP</small></div>
+        <div class="price" style="font-size:22px;margin-top:4px">$850.000 <small>COP</small></div>
         <div class="feat-card-actions">
           <a class="add-btn" style="flex:1;justify-content:center;text-decoration:none;gap:7px" target="_blank" rel="noopener"
             onclick="event.stopPropagation()"
-            href="${buildWALink('Hola, quiero el COMBO: Retatrutide 10mg PrimeHack ($750.000) + Whey Gourmet Series 2 lbs GRATIS (alianza Pronusa). ¿Cómo aplica la oferta?')}">
+            href="${buildWALink('Hola, quiero el COMBO: Retatrutide 10mg PrimeHack ($850.000) + Whey Gourmet Series 2 lbs GRATIS (alianza Pronusa). ¿Cómo aplica la oferta?')}">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width:15px;height:15px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
             Consultar combo
           </a>
