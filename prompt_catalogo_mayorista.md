@@ -64,6 +64,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | AOD-9604 (PrimePeak) | 10 mg / vial | $353.000 | $490.000 |
 | HGH Fragment 176-191 | 5 mg / vial | $177.100 | $230.000 |
 | MOTS-C | 10 mg / vial | $252.000 | $320.000 |
+| MOTS-C | 40 mg / vial | — | $1.180.000 |
 | Tesamorelin | 10 mg / vial | $270.000 | $320.000 |
 | Tesamorelin PrimeHack (caja) | 10 mg | $300.000 | $380.000 |
 
