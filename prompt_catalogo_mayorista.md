@@ -57,6 +57,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | Retatrutide | 10 mg / vial | $468.000 | $650.000 |
 | Retatrutide PrimeHack (caja) | 10 mg | $810.000 | $950.000 |
 | Retatrutide GLP 3-R 20mg (PrimeHack) | 20 mg | $810.000 | $950.000 |
+| Combo Pérdida Reparadora | Reta 10mg PrimeHack + BPC/TB-500 5mg | — | $785.000 |
 | Tirzepatide | 10 mg / vial | $430.000 | $550.000 |
 | Tirzepatide | 20 mg / vial | $720.000 | $900.000 |
 | 5-Amino-1MQ | 50 mg / vial | $246.400 | $320.000 |
