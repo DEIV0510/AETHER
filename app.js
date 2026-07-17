@@ -209,6 +209,7 @@ function buildCard(p, idx){
     <article class="card" data-cat="${p.cat}" data-id="${p.id}" style="animation-delay:${idx*55}ms" onclick="handleCardClick(event,'${p.id}')">
       <span class="card-shine" aria-hidden="true"></span>
       ${p.tag ? `<span class="card-tag${p.destacado ? ' gold' : ''}">${p.tag}</span>` : ''}
+      ${p.antes ? `<span class="card-off-seal" aria-hidden="true">-${Math.round((1-p.precio/p.antes)*100)}<i>%</i></span>` : ''}
       <div class="card-media">
         <img class="card-img" src="${p.img}" alt="${p.nombre} ${p.presentacion}" loading="lazy" decoding="async" fetchpriority="low" width="600" height="600">
       </div>
@@ -220,8 +221,8 @@ function buildCard(p, idx){
         <p class="card-desc">${p.desc}</p>
         <div class="card-foot">
           <div>
-            <small style="font-size:10px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase">${p.antes?'Oferta':'Desde'}</small>
-            <div class="price">${p.antes?'<span class="price-old" style="text-decoration:line-through;color:var(--muted);font-size:.58em;font-weight:500;opacity:.7;margin-right:3px">'+fmtCOP(p.antes)+'</span>':''}${fmtCOP(p.precio)}<small>COP</small>${p.antes?' <span class="off-badge" style="display:inline-block;margin-left:6px;padding:2px 7px;border-radius:100px;background:linear-gradient(135deg,#F4C95D,#E0A93B);color:#241300;font-size:.5em;font-weight:800;letter-spacing:.03em;vertical-align:middle">-'+Math.round((1-p.precio/p.antes)*100)+'%</span>':''}</div>
+            <small style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;${p.antes?'color:var(--gold-1);font-weight:800':'color:var(--muted)'}">${p.antes?'🔥 Oferta':'Desde'}</small>
+            <div class="price">${p.antes?'<span class="price-old" style="text-decoration:line-through;color:var(--muted);font-size:.58em;font-weight:500;opacity:.7;margin-right:4px">'+fmtCOP(p.antes)+'</span>':''}${fmtCOP(p.precio)}<small>COP</small></div>
           </div>
           <div style="display:flex;gap:8px;align-items:center">
             <button class="card-info-btn" onclick="event.stopPropagation();openDetail('${p.id}')" title="Ver más información" aria-label="Ver detalle del producto">
