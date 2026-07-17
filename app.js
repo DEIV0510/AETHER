@@ -52,7 +52,7 @@ const PRODUCTS = [
   // CRECIMIENTO MUSCULAR
   {id:'igf1lr3', cat:'muscular', tag:'IGF', nombre:'IGF-1 LR3', presentacion:'1 mg / vial', precio:320000, img:IMG_DATA['igf1lr3'], desc:'Factor de crecimiento de acción prolongada asociado con ganancia muscular, recuperación y síntesis proteica.', destacado:true},
   {id:'ipamorelin_10mg', cat:'muscular', tag:'GH-Sec', nombre:'Ipamorelin', presentacion:'10 mg / vial', precio:250000, img:IMG_DATA['ipamorelin_10mg'], desc:'Secretagogo selectivo de GH enfocado en recuperación, descanso y soporte de composición corporal.'},
-  {id:'ipamorelin_5mg_box', cat:'muscular', tag:'Caja Premium', nombre:'Ipamorelin PrimeHack', presentacion:'Caja · 5 mg / vial', precio:305000, img:'img/ipamorelin-5mg-primehack.webp', desc:'Secretagogo selectivo asociado a soporte del eje GH/IGF-1, recuperación muscular, reparación tisular, composición corporal y descanso reparador dentro de protocolos supervisados.'},
+  {id:'ipamorelin_5mg_box', cat:'muscular', tag:'Caja Premium', nombre:'Ipamorelin PrimeHack', presentacion:'Caja · 5 mg / vial', precio:305000, antes:350000, img:'img/ipamorelin-5mg-primehack.webp', desc:'Secretagogo selectivo asociado a soporte del eje GH/IGF-1, recuperación muscular, reparación tisular, composición corporal y descanso reparador dentro de protocolos supervisados.'},
   {id:'cjc_5mg', cat:'muscular', tag:'GHRH', nombre:'CJC-1295 sin DAC', presentacion:'5 mg / vial', precio:250000, img:IMG_DATA['cjc_5mg'], desc:'Análogo de GHRH de acción corta que potencia los pulsos naturales de hormona de crecimiento.'},
   {id:'ghrp6', cat:'muscular', tag:'GHRP', nombre:'GHRP-6', presentacion:'5 mg / vial', precio:100000, img:IMG_DATA['ghrp6'], desc:'Secretagogo de GH conocido por estimular apetito, recuperación y soporte anabólico.'},
   {id:'ghrp2', cat:'muscular', tag:'GHRP', nombre:'GHRP-2', presentacion:'5 mg / vial', precio:100000, img:IMG_DATA['ghrp2'], desc:'Péptido estimulador de GH enfocado en recuperación, rendimiento y mejora de composición corporal. Versión más leve que GHRP-6.'},
@@ -76,10 +76,10 @@ const PRODUCTS = [
   // ============ LINEA PRIMEHACK · CAJAS PREMIUM ============
   {id:'retatrutide_20mg', cat:'metabolico', tag:'Caja Premium', nombre:'Retatrutide GLP 3-R 20mg', presentacion:'Caja · 20 mg / vial', precio:1350000, img:'img/retatrutide-20mg.webp', desc:'Triple agonista GLP-1/GIP/Glucagón en presentación de alta concentración 20mg. Para protocolos avanzados de pérdida de grasa y control metabólico.', destacado:true},
   {id:'retatrutide_box', cat:'metabolico', tag:'Caja Premium', nombre:'Retatrutide GLP 3-R', presentacion:'Caja · 10 mg / vial', precio:700000, img:IMG_DATA['retatrutide_box'], desc:'Triple agonista GLP-1/GIP/Glucagón en caja premium. Reduce el apetito, mejora la sensibilidad a la insulina y aumenta el gasto energético.', destacado:true},
-  {id:'tesamorelin_box', cat:'metabolico', tag:'Caja Premium', nombre:'Tesamorelin GHRH', presentacion:'Caja · 10 mg / vial', precio:455000, img:IMG_DATA['tesamorelin_box'], desc:'Análogo de GHRH en caja premium. Estimula la liberación natural de hormona de crecimiento y favorece la reducción de grasa visceral.'},
+  {id:'tesamorelin_box', cat:'metabolico', tag:'Caja Premium', nombre:'Tesamorelin GHRH', presentacion:'Caja · 10 mg / vial', precio:455000, antes:550000, img:IMG_DATA['tesamorelin_box'], desc:'Análogo de GHRH en caja premium. Estimula la liberación natural de hormona de crecimiento y favorece la reducción de grasa visceral.'},
   {id:'ghkcu_box', cat:'regen', tag:'Caja Premium', nombre:'GHK-CU Tripeptide', presentacion:'Caja · 50 mg / vial', precio:350000, img:IMG_DATA['ghkcu_box'], desc:'Péptido regenerativo con cobre en caja premium. Asociado a producción de colágeno, reparación tisular y salud de piel y cabello.', destacado:true},
-  {id:'bpc_tb_box', cat:'regen', tag:'Caja Premium', nombre:'BPC 157 + TB 500 REGEN', presentacion:'Caja · 10 mg / vial', precio:400000, img:IMG_DATA['bpc_tb_box'], desc:'Stack regenerativo en caja premium. Orientado a recuperación muscular, tendinosa y reparación de tejidos.', destacado:true},
-  {id:'nad_box', cat:'longevidad', tag:'Caja Premium', nombre:'NAD+ REDOX', presentacion:'Caja · 500 mg / vial', precio:320000, img:IMG_DATA['nad_box'], desc:'Coenzima NAD+ en caja premium. Esencial para producción de energía celular, función mitocondrial y soporte antiedad.', destacado:true},
+  {id:'bpc_tb_box', cat:'regen', tag:'Caja Premium', nombre:'BPC 157 + TB 500 REGEN', presentacion:'Caja · 10 mg / vial', precio:350000, antes:400000, img:IMG_DATA['bpc_tb_box'], desc:'Stack regenerativo en caja premium. Orientado a recuperación muscular, tendinosa y reparación de tejidos.', destacado:true},
+  {id:'nad_box', cat:'longevidad', tag:'Caja Premium', nombre:'NAD+ REDOX', presentacion:'Caja · 500 mg / vial', precio:350000, antes:400000, img:IMG_DATA['nad_box'], desc:'Coenzima NAD+ en caja premium. Esencial para producción de energía celular, función mitocondrial y soporte antiedad.', destacado:true},
 
   // AGUA BACTERIOSTATICA
   {id:'bacwater_3ml', cat:'agua', tag:'Diluyente', nombre:'BAC Water', presentacion:'3 ml', precio:40000, img:IMG_DATA['bacwater_3ml'], desc:'Agua estéril con conservante para reconstituir tus péptidos de forma segura.'},
@@ -220,8 +220,8 @@ function buildCard(p, idx){
         <p class="card-desc">${p.desc}</p>
         <div class="card-foot">
           <div>
-            <small style="font-size:10px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase">Desde</small>
-            <div class="price">${fmtCOP(p.precio)}<small>COP</small></div>
+            <small style="font-size:10px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase">${p.antes?'Oferta':'Desde'}</small>
+            <div class="price">${p.antes?'<span class="price-old" style="text-decoration:line-through;color:var(--muted);font-size:.58em;font-weight:500;opacity:.7;margin-right:3px">'+fmtCOP(p.antes)+'</span>':''}${fmtCOP(p.precio)}<small>COP</small>${p.antes?' <span class="off-badge" style="display:inline-block;margin-left:6px;padding:2px 7px;border-radius:100px;background:linear-gradient(135deg,#F4C95D,#E0A93B);color:#241300;font-size:.5em;font-weight:800;letter-spacing:.03em;vertical-align:middle">-'+Math.round((1-p.precio/p.antes)*100)+'%</span>':''}</div>
           </div>
           <div style="display:flex;gap:8px;align-items:center">
             <button class="card-info-btn" onclick="event.stopPropagation();openDetail('${p.id}')" title="Ver más información" aria-label="Ver detalle del producto">
@@ -399,7 +399,7 @@ function openDetail(id){
   // Header
   $('#detailPresent').textContent = p.presentacion;
   $('#detailName').textContent = p.nombre;
-  $('#detailPrice').innerHTML = fmtCOP(p.precio);
+  $('#detailPrice').innerHTML = (p.antes?'<span class="price-old" style="text-decoration:line-through;color:var(--muted);font-size:.62em;font-weight:500;opacity:.7;margin-right:5px">'+fmtCOP(p.antes)+'</span>':'') + fmtCOP(p.precio) + (p.antes?' <span class="off-badge" style="display:inline-block;margin-left:8px;padding:3px 9px;border-radius:100px;background:linear-gradient(135deg,#F4C95D,#E0A93B);color:#241300;font-size:.5em;font-weight:800;letter-spacing:.03em;vertical-align:middle">-'+Math.round((1-p.precio/p.antes)*100)+'%</span>':'');
 
   // Tabs content
   $('#tabDesc').textContent = p.desc || '';
