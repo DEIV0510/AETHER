@@ -56,7 +56,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 |---|---|---|---|
 | Retatrutide | 10 mg / vial | $468.000 | $650.000 |
 | Retatrutide PrimeHack (caja) | 10 mg | $810.000 | $950.000 |
-| Retatrutide GLP 3-R 20mg (PrimeHack) | 20 mg | $810.000 | $950.000 |
+| Retatrutide GLP 3-R 20mg (PrimeHack) | 20 mg | $810.000 | $1.350.000 · 2ª unidad −20% = $1.080.000 |
 | Combo Pérdida Reparadora | Reta 10mg PrimeHack + BPC-157 o TB-500 5mg | — | $785.000 |
 | Tirzepatide | 10 mg / vial | $430.000 | $550.000 |
 | Tirzepatide | 20 mg / vial | $720.000 | $900.000 |
@@ -101,7 +101,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | Melanotan II | 10 mg / vial | $115.500 | $150.000 |
 | PT-141 | 10 mg / vial | $192.500 | $250.000 |
 | NAD+ | 500 mg / vial | $246.400 | $320.000 |
-| NAD+ PrimeHack (caja) | 500 mg | $266.400 | $320.000 |
+| NAD+ PrimeHack (caja) | 500 mg | $266.400 | $380.000 |
 | Kisspeptin-10 | 10 mg / vial | $154.000 | $250.000 |
 
 #### 05 — AGUA BACTERIOSTÁTICA

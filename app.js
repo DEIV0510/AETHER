@@ -74,12 +74,12 @@ const PRODUCTS = [
   {id:'kisspeptin', cat:'otros', tag:'Hormonal', nombre:'Kisspeptin-10', presentacion:'10 mg / vial', precio:250000, img:IMG_DATA['kisspeptin'], desc:'Péptido relacionado con regulación hormonal y estimulación del eje reproductivo.'},
 
   // ============ LINEA PRIMEHACK · CAJAS PREMIUM ============
-  {id:'retatrutide_20mg', cat:'metabolico', tag:'Caja Premium', nombre:'Retatrutide GLP 3-R 20mg', presentacion:'Caja · 20 mg / vial', precio:1350000, img:'img/retatrutide-20mg.webp', desc:'Triple agonista GLP-1/GIP/Glucagón en presentación de alta concentración 20mg. Para protocolos avanzados de pérdida de grasa y control metabólico.', destacado:true},
+  {id:'retatrutide_20mg', cat:'metabolico', tag:'Caja Premium', nombre:'Retatrutide GLP 3-R 20mg', presentacion:'Caja · 20 mg / vial', precio:1350000, promo2x:true, img:'img/retatrutide-20mg.webp', desc:'Triple agonista GLP-1/GIP/Glucagón en presentación de alta concentración 20mg. Para protocolos avanzados de pérdida de grasa y control metabólico. Promo: la 2ª unidad con −20% a $1.080.000.', destacado:true},
   {id:'retatrutide_box', cat:'metabolico', tag:'Caja Premium', nombre:'Retatrutide GLP 3-R', presentacion:'Caja · 10 mg / vial', precio:700000, promo3x:true, img:IMG_DATA['retatrutide_box'], desc:'Triple agonista GLP-1/GIP/Glucagón en caja premium. Reduce el apetito, mejora la sensibilidad a la insulina y aumenta el gasto energético. Promo 3×: compra 2 y llévate la 3ª unidad a $560.000 (−20%).', destacado:true},
   {id:'tesamorelin_box', cat:'metabolico', tag:'Caja Premium', nombre:'Tesamorelin GHRH', presentacion:'Caja · 10 mg / vial', precio:455000, antes:550000, img:IMG_DATA['tesamorelin_box'], desc:'Análogo de GHRH en caja premium. Estimula la liberación natural de hormona de crecimiento y favorece la reducción de grasa visceral.'},
   {id:'ghkcu_box', cat:'regen', tag:'Caja Premium', nombre:'GHK-CU Tripeptide', presentacion:'Caja · 50 mg / vial', precio:350000, img:IMG_DATA['ghkcu_box'], desc:'Péptido regenerativo con cobre en caja premium. Asociado a producción de colágeno, reparación tisular y salud de piel y cabello.', destacado:true},
   {id:'bpc_tb_box', cat:'regen', tag:'Caja Premium', nombre:'BPC 157 + TB 500 REGEN', presentacion:'Caja · 10 mg / vial', precio:350000, antes:400000, img:IMG_DATA['bpc_tb_box'], desc:'Stack regenerativo en caja premium. Orientado a recuperación muscular, tendinosa y reparación de tejidos.', destacado:true},
-  {id:'nad_box', cat:'longevidad', tag:'Caja Premium', nombre:'NAD+ REDOX', presentacion:'Caja · 500 mg / vial', precio:350000, antes:400000, img:IMG_DATA['nad_box'], desc:'Coenzima NAD+ en caja premium. Esencial para producción de energía celular, función mitocondrial y soporte antiedad.', destacado:true},
+  {id:'nad_box', cat:'longevidad', tag:'Caja Premium', nombre:'NAD+ REDOX', presentacion:'Caja · 500 mg / vial', precio:380000, antes:400000, img:IMG_DATA['nad_box'], desc:'Coenzima NAD+ en caja premium. Esencial para producción de energía celular, función mitocondrial y soporte antiedad.', destacado:true},
 
   // AGUA BACTERIOSTATICA
   {id:'bacwater_3ml', cat:'agua', tag:'Diluyente', nombre:'BAC Water', presentacion:'3 ml', precio:40000, img:IMG_DATA['bacwater_3ml'], desc:'Agua estéril con conservante para reconstituir tus péptidos de forma segura.'},
@@ -204,6 +204,22 @@ const CAT_META = {
 let _currentCat = null;
 let _renderToken = 0;
 
+/* Píldora de promo por unidades (informativa → WhatsApp).
+   promo3x: compra 2, la 3ª con -20%   ·   promo2x: la 2ª unidad con -20% */
+function promoPillHTML(p){
+  if (!p.promo3x && !p.promo2x) return '';
+  const desc  = Math.round(p.precio * 0.8);
+  const es3x  = !!p.promo3x;
+  const label = es3x
+    ? `Compra 2, la 3ª a <b style="color:#fff">−20%</b> = ${fmtCOP(desc)}`
+    : `2ª unidad con <b style="color:#fff">−20%</b> = ${fmtCOP(desc)}`;
+  const msg = es3x
+    ? `Hola, quiero la promo 3x de ${p.nombre} (${p.presentacion}): 2 unidades a ${fmtCOP(p.precio)} c/u y la 3ra con -20% a ${fmtCOP(desc)} (total ${fmtCOP(p.precio*2 + desc)}). ¿Me confirman disponibilidad?`
+    : `Hola, quiero la promo de 2ª unidad de ${p.nombre} (${p.presentacion}): la 1ª a ${fmtCOP(p.precio)} y la 2ª con -20% a ${fmtCOP(desc)} (total ${fmtCOP(p.precio + desc)}). ¿Me confirman disponibilidad?`;
+  const title = es3x ? 'Promo 3x por WhatsApp' : 'Promo 2ª unidad por WhatsApp';
+  return `<a class="card-promo-pill" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="${title}" href="${buildWALink(msg)}" style="display:inline-flex;align-items:center;gap:6px;align-self:flex-start;margin:0 0 12px;padding:6px 12px;border-radius:9px;text-decoration:none;line-height:1.2;font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:800;letter-spacing:.03em;color:var(--gold-1);background:linear-gradient(135deg,rgba(244,201,93,.16),rgba(224,169,59,.08));border:1px solid rgba(244,201,93,.42);box-shadow:0 2px 10px -4px rgba(244,201,93,.35)"><span aria-hidden="true">🎁</span><span>${label}</span></a>`;
+}
+
 function buildCard(p, idx){
   return `
     <article class="card" data-cat="${p.cat}" data-id="${p.id}" style="animation-delay:${idx*55}ms" onclick="handleCardClick(event,'${p.id}')">
@@ -219,7 +235,7 @@ function buildCard(p, idx){
           <h3 class="card-title">${p.nombre}</h3>
         </div>
         <p class="card-desc">${p.desc}</p>
-        ${p.promo3x ? `<a class="card-promo-pill" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Promo 3x por WhatsApp" href="${buildWALink('Hola, quiero la promo 3x de ' + p.nombre + ' (' + p.presentacion + '): 2 unidades a ' + fmtCOP(p.precio) + ' c/u y la 3ra con -20% a ' + fmtCOP(Math.round(p.precio*0.8)) + ' (total ' + fmtCOP(p.precio*2 + Math.round(p.precio*0.8)) + '). ¿Me confirman disponibilidad?')}" style="display:inline-flex;align-items:center;gap:6px;align-self:flex-start;margin:0 0 12px;padding:6px 12px;border-radius:9px;text-decoration:none;line-height:1.2;font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:800;letter-spacing:.03em;color:var(--gold-1);background:linear-gradient(135deg,rgba(244,201,93,.16),rgba(224,169,59,.08));border:1px solid rgba(244,201,93,.42);box-shadow:0 2px 10px -4px rgba(244,201,93,.35)"><span aria-hidden="true">🎁</span><span>Compra 2, la 3ª a <b style="color:#fff">−20%</b> = ${fmtCOP(Math.round(p.precio*0.8))}</span></a>` : ''}
+        ${promoPillHTML(p)}
         <div class="card-foot">
           <div>
             <small style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;${p.antes?'color:var(--gold-1);font-weight:800':'color:var(--muted)'}">${p.antes?'🔥 Oferta':'Desde'}</small>
