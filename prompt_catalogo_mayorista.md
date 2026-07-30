@@ -115,6 +115,15 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | BAC Water | 10 ml | $61.600 | $80.000 |
 | BAC Water | 20 ml | $115.500 | $150.000 |
 
+#### 06 — KITS DE USO / MATERIAL DE APLICACIÓN
+
+Jeringa de insulina a elegir: 0.3 ml (30 ui) · 0.5 ml (50 ui) · 1 ml (100 ui).
+
+| Producto | Presentación | Mayorista | Público |
+|---|---|---|---|
+| Kit de Uso | 5 jeringas insulina + 1 jeringa 3 ml + 5 paños de alcohol | — | $6.500 |
+| Kit de Uso XL | 10 jeringas insulina + 2 jeringas 3 ml + 10 paños de alcohol | — | $12.500 |
+
 **Página final — Contacto y cierre**
 - Logo circular grande
 - "Tu aliado en péptidos premium"
