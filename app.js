@@ -788,35 +788,9 @@ document.addEventListener('keydown', e => {
   if(e.key === 'Escape'){ closeCart(); closeCheckout(); }
 });
 
-/* ====================  CINEMATIC SCENE OBSERVER  ==================== */
-(function(){
-  if(!('IntersectionObserver' in window)) return;
-  const sceneObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(e.isIntersecting && e.intersectionRatio > 0.15){
-        e.target.classList.add('in-view');
-      }
-    });
-  }, {threshold:[0, 0.15, 0.4], rootMargin:'-10% 0px -10% 0px'});
-  document.querySelectorAll('section, header.hero').forEach(s => sceneObs.observe(s));
-
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if(!ticking){
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        document.documentElement.style.setProperty('--scroll-drift', `${-y * 0.05}px`);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, {passive:true});
-})();
-
-/* ====================  INIT  ==================== */
-renderFeatured();
-updateCartUI();
-initRevealObserver();
+/* (El "Scene Observer" y el INIT viven una sola vez al final del archivo —
+   se eliminó aquí una copia duplicada que creaba 2 observers, 2 listeners de
+   scroll y renderizaba la sección destacados dos veces). */
 // Note: no initial renderProducts() \u2014 catalog starts in discovery state
 /* ====================  PRELOADER (auto-hide)  ==================== */
 (function(){
@@ -955,6 +929,18 @@ renderFeatured = function(){
       ticking = true;
     }
   }, {passive:true});
+})();
+
+/* ====================  PERF: PAUSA ANIMACIONES FUERA DE PANTALLA  ====================
+   Congela las animaciones CSS de las secciones que no están a la vista
+   (animation-play-state:paused). No afecta tamaños ni layout → sin saltos;
+   solo ahorra CPU/GPU cuando la sección no se ve. */
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  const animObs = new IntersectionObserver(entries => {
+    entries.forEach(e => e.target.classList.toggle('anim-off', !e.isIntersecting));
+  }, {rootMargin:'200px 0px 200px 0px'});
+  document.querySelectorAll('section, header.hero, footer').forEach(el => animObs.observe(el));
 })();
 
 /* ====================  INIT  ==================== */
