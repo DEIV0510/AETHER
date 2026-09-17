@@ -61,14 +61,11 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | Combo Lean Recomposition | Tesamorelina 10mg + Ipamorelina 5mg | — | $705.000 |
 | Combo Shape & Glow | Retatrutide 10mg + GHK-Cu 50mg | — | $990.000 |
 | Tirzepatide | 10 mg / vial | $430.000 | $550.000 |
-| Tirzepatide | 20 mg / vial | $720.000 | $900.000 |
 | 5-Amino-1MQ | 50 mg / vial | $246.400 | $320.000 |
-| AOD-9604 | 5 mg / vial | $177.100 | $230.000 |
 | AOD-9604 (PrimePeak) | 10 mg / vial | $353.000 | $490.000 |
 | HGH Fragment 176-191 | 5 mg / vial | $177.100 | $230.000 |
 | MOTS-C | 10 mg / vial | $252.000 | $320.000 |
 | MOTS-C | 40 mg / vial | — | $1.180.000 |
-| Tesamorelin | 10 mg / vial | $270.000 | $320.000 |
 | Tesamorelin PrimeHack (caja) | 10 mg | $300.000 | $380.000 |
 
 #### 02 — CRECIMIENTO / MASA MUSCULAR
