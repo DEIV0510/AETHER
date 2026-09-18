@@ -85,7 +85,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 |---|---|---|---|
 | Combo Regeneración Total | GHK-CU + Korageem + Zinc | $385.000 | $500.000 |
 | Combo Reparación & Defensas | GHK-CU + Zinc | $323.000 | $420.000 |
-| GHK-CU | 50 mg / vial | $200.000 | $350.000 |
+| GHK-CU | 100 mg / vial | $360.000 | $480.000 |
 | GHK-CU PrimeHack (caja) | 50 mg | $200.000 | $350.000 |
 | Glow Stack | 70 mg / vial | $500.000 | $650.000 |
 | BPC-157 + TB-500 | 20 mg / vial | $320.000 | $400.000 |
