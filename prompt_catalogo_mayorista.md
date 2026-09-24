@@ -66,6 +66,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | HGH Fragment 176-191 | 5 mg / vial | $177.100 | $230.000 |
 | MOTS-C | 10 mg / vial | $252.000 | $320.000 |
 | MOTS-C | 40 mg / vial | — | $1.180.000 |
+| MOTS-C PrimeHack (caja) | 10 mg | — | $400.000 |
 | Tesamorelin PrimeHack (caja) | 10 mg | $300.000 | $380.000 |
 
 #### 02 — CRECIMIENTO / MASA MUSCULAR
@@ -92,6 +93,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | Regen PrimeHack (BPC+TB-500) | 10 mg | $320.000 | $400.000 |
 | TB-500 | 5 mg / vial | $192.500 | $250.000 |
 | BPC-157 | 5 mg / vial | $192.500 | $250.000 |
+| Klow PrimeHack (caja) | 80 mg | — | $1.200.000 |
 
 #### 04 — OTROS PÉPTIDOS
 
@@ -104,6 +106,8 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | Glutatión | 600 mg / vial | — | $450.000 |
 | Kisspeptin-10 | 10 mg / vial | $154.000 | $250.000 |
 | Selank Nasal (Biohacking Peptides) | Spray · 10 mL | — | $590.000 |
+| Selank PrimeHack (caja) | 10 mg | — | $400.000 |
+| Semax PrimeHack (caja) | 10 mg | — | $500.000 |
 
 #### 05 — AGUA BACTERIOSTÁTICA
 
