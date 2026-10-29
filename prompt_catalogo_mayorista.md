@@ -57,6 +57,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | Retatrutide | 10 mg / vial | $468.000 | $650.000 |
 | Retatrutide PrimeHack (caja) | 10 mg | $810.000 | $950.000 |
 | Retatrutide GLP 3-R 20mg (PrimeHack) | 20 mg | $810.000 | $1.350.000 · 2ª unidad −20% = $1.080.000 |
+| Retatrutide Plumilla | 20 mg | — | $2.100.000 |
 | Combo Pérdida Reparadora | Reta 10mg PrimeHack + BPC-157 o TB-500 5mg | — | $785.000 |
 | Combo Lean Recomposition | Tesamorelina 10mg + Ipamorelina 5mg | — | $705.000 |
 | Combo Shape & Glow | Retatrutide 10mg + GHK-Cu 50mg | — | $990.000 |
