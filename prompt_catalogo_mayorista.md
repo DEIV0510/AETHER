@@ -104,9 +104,9 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | PT-141 | 10 mg / vial | $192.500 | $250.000 |
 | NAD+ | 500 mg / vial | $246.400 | $320.000 |
 | NAD+ PrimeHack (caja) | 500 mg | $266.400 | $380.000 |
-| Glutatión | 600 mg / vial | $210.000 | $300.000 |
+| Glutatión | 600 mg / vial | — | $450.000 |
 | Kisspeptin-10 | 10 mg / vial | $154.000 | $250.000 |
-| Selank Nasal (Biohacking Peptides) | Spray · 10 mL | $294.000 | $420.000 |
+| Selank Nasal (Biohacking Peptides) | Spray · 10 mL | — | $590.000 |
 | Selank PrimeHack (caja) | 10 mg | — | $400.000 |
 | Semax PrimeHack (caja) | 10 mg | — | $500.000 |
 
