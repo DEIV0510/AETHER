@@ -69,6 +69,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | MOTS-C | 40 mg / vial | — | $1.180.000 |
 | MOTS-C PrimeHack (caja) | 10 mg | — | $400.000 |
 | Tesamorelin PrimeHack (caja) | 10 mg | $300.000 | $380.000 |
+| ATX 304 Nova | 50 mg × 60 cápsulas | — | $280.000 |
 
 #### 02 — CRECIMIENTO / MASA MUSCULAR
 
@@ -95,20 +96,27 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | TB-500 | 5 mg / vial | $192.500 | $250.000 |
 | BPC-157 | 5 mg / vial | $192.500 | $250.000 |
 | Klow PrimeHack (caja) | 80 mg | — | $1.200.000 |
+| KPV Nova | 10 mg / vial | — | $310.000 |
+| Snap-8 Serum Nova | Sérum · 30 mL | $175.000 | $250.000 |
 
 #### 04 — OTROS PÉPTIDOS
 
 | Producto | Presentación | Mayorista | Público |
 |---|---|---|---|
 | Melanotan II | 10 mg / vial | $115.500 | $150.000 |
-| PT-141 | 10 mg / vial | $192.500 | $250.000 |
+| PT-141 FastMuscle | 10 mg / vial | $192.500 | $250.000 |
+| PT-141 Spray Nasal Nova | 10 mg / spray | — | $330.000 |
 | NAD+ | 500 mg / vial | $246.400 | $320.000 |
 | NAD+ PrimeHack (caja) | 500 mg | $266.400 | $380.000 |
-| Glutatión | 600 mg / vial | — | $450.000 |
+| Glutatión Biohacking | 600 mg / vial | — | $450.000 |
+| Glutatión Nova | 600 mg / vial | $210.000 | $300.000 |
 | Kisspeptin-10 | 10 mg / vial | $154.000 | $250.000 |
-| Selank Nasal (Biohacking Peptides) | Spray · 10 mL | — | $590.000 |
+| Selank Spray Nasal Biohacking | 10 mL / spray | — | $590.000 |
+| Selank Spray Nasal Nova | 10 mg / spray | $294.000 | $420.000 |
 | Selank PrimeHack (caja) | 10 mg | — | $400.000 |
+| Semax Spray Nasal Nova | 10 mg / spray | $294.000 | $450.000 |
 | Semax PrimeHack (caja) | 10 mg | — | $500.000 |
+| Pinealon Nova | 10 mg / vial | — | $150.000 |
 
 #### 05 — AGUA BACTERIOSTÁTICA
 
