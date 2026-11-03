@@ -36,7 +36,7 @@ const IMG_DATA = {
 const PRODUCTS = [
   // PERDIDA DE GRASA / METABOLICO
   {id:'retatrutide_10mg', cat:'metabolico', tag:'GLP', nombre:'Retatrutide', presentacion:'10 mg / vial', precio:650000, img:IMG_DATA['retatrutide_10mg'], desc:'Triple agonista GLP-1/GIP/Glucagón. Reduce el apetito, mejora la sensibilidad a la insulina y aumenta el gasto energético.', destacado:true},
-  {id:'tirzepatide', cat:'metabolico', tag:'GLP', nombre:'Tirzepatide', presentacion:'10 mg / vial', precio:550000, img:IMG_DATA['tirzepatide'], desc:'Agonista dual GLP-1/GIP enfocado en control del apetito, regulación de glucosa y pérdida de grasa corporal.'},
+  {id:'tirzepatide', cat:'metabolico', tag:'GLP', nombre:'Tirzepatide', presentacion:'10 mg / vial', precio:600000, img:IMG_DATA['tirzepatide'], desc:'Agonista dual GLP-1/GIP enfocado en control del apetito, regulación de glucosa y pérdida de grasa corporal.'},
   {id:'5amino1mq', cat:'metabolico', tag:'Lipo', nombre:'5-Amino-1MQ', presentacion:'50 mg / vial', precio:320000, img:IMG_DATA['5amino1mq'], desc:'Modulador metabólico investigado por favorecer la oxidación de grasa y mejorar la composición corporal.'},
   {id:'aod9604_10mg', cat:'metabolico', tag:'Lipo', nombre:'AOD-9604', presentacion:'10 mg / vial', precio:490000, img:'img/aod9604-10mg.webp', desc:'Fragmento derivado de HGH en presentación de mayor concentración. Estimula la lipólisis y apoya la pérdida de grasa corporal sin efectos anabólicos.'},
   {id:'hghfrag', cat:'metabolico', tag:'Lipo', nombre:'HGH Fragment 176-191', presentacion:'5 mg / vial', precio:230000, img:IMG_DATA['hghfrag'], desc:'Fragmento específico de HGH enfocado en movilización y utilización de grasa corporal.'},

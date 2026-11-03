@@ -61,7 +61,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | Combo Pérdida Reparadora | Reta 10mg PrimeHack + BPC-157 o TB-500 5mg | — | $785.000 |
 | Combo Lean Recomposition | Tesamorelina 10mg + Ipamorelina 5mg | — | $705.000 |
 | Combo Shape & Glow | Retatrutide 10mg + GHK-Cu 50mg | — | $990.000 |
-| Tirzepatide | 10 mg / vial | $430.000 | $550.000 |
+| Tirzepatide | 10 mg / vial | $430.000 | $600.000 |
 | 5-Amino-1MQ | 50 mg / vial | $246.400 | $320.000 |
 | AOD-9604 (PrimePeak) | 10 mg / vial | $353.000 | $490.000 |
 | HGH Fragment 176-191 | 5 mg / vial | $177.100 | $230.000 |
