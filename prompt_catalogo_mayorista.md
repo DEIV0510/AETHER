@@ -113,8 +113,10 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | Kisspeptin-10 | 10 mg / vial | $154.000 | $250.000 |
 | Selank Spray Nasal Biohacking | 10 mL / spray | — | $590.000 |
 | Selank Spray Nasal Nova | 10 mg / spray | $294.000 | $420.000 |
+| N-Acetyl Selank Amidate Spray Nasal Nova | 30 mg / spray | — | $730.000 |
 | Selank PrimeHack (caja) | 10 mg | — | $400.000 |
 | Semax Spray Nasal Nova | 10 mg / spray | $294.000 | $450.000 |
+| N-Acetyl Semax Amidate Spray Nasal Nova | 30 mg / spray | — | $750.000 |
 | Semax PrimeHack (caja) | 10 mg | — | $500.000 |
 | Pinealon Nova | 10 mg / vial | — | $150.000 |
 
