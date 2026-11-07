@@ -97,7 +97,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | BPC-157 | 5 mg / vial | $192.500 | $250.000 |
 | Klow PrimeHack (caja) | 80 mg | — | $1.200.000 |
 | KPV Nova | 10 mg / vial | — | $310.000 |
-| Snap-8 Serum Nova | Sérum · 30 mL | $175.000 | $250.000 |
+| Snap 8 Serum 10mg/30ML Nova | Sérum · 30 mL | $175.000 | $250.000 |
 
 #### 04 — OTROS PÉPTIDOS
 
