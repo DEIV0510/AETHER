@@ -98,6 +98,7 @@ Para cada categoría: una hoja con un cuadro tipo carta de producto. Cada produc
 | Klow PrimeHack (caja) | 80 mg | — | $1.200.000 |
 | KPV Nova | 10 mg / vial | — | $310.000 |
 | Snap 8 Serum 10mg/30ML Nova | Sérum · 30 mL | $175.000 | $250.000 |
+| GHK-Cu Serum 100mg/30ML Nova | Sérum · 30 mL | — | $550.000 |
 
 #### 04 — OTROS PÉPTIDOS
 
