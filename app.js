@@ -184,6 +184,46 @@ const PRODUCT_DETAIL = {
   kit_uso_xl:{mecanismo:'Versión ampliada del kit de material para la aplicación e higiene de tu protocolo. Incluye jeringas de insulina para dosis pequeñas y precisas, jeringas de 3 ml para reconstitución y manejo del vial, y paños de alcohol para la asepsia de la zona y del tapón antes de cada uso. Ideal para protocolos extendidos o de mayor frecuencia.',beneficios:['10 jeringas de insulina de un solo uso','2 jeringas de 3 ml para reconstitución','10 paños de alcohol para asepsia','Presentación de la jeringa de insulina a elección'],protocolo:'Elige la presentación de la jeringa de insulina: 0.3 ml (30 ui), 0.5 ml (50 ui) o 1 ml (100 ui), e indícanos la medida al confirmar tu pedido por WhatsApp. Material estéril de un solo uso: no reutilizar y desechar de forma segura tras cada aplicación.',stack:'Complementa con Agua Bacteriostática para la reconstitución de tus péptidos.'}
 };
 
+/* ====================  BLACK FRIDAY 2026 (temporal)  ====================
+   Pedido del cliente (12-nov-2026): línea PrimeHack −30% sobre el precio BASE
+   (si la caja ya tenía oferta, se calcula sobre el precio "antes") y la
+   Retatrutide Plumilla −20%. El Klow PrimeHack queda fuera.
+   Se apaga sola el 1-dic-2026 00:00 (hora Colombia): vuelven los precios base,
+   las promos 2x/3x y el carrusel original de la portada. */
+const BF = {
+  fin: Date.parse('2026-12-01T00:00:00-05:00'),
+  pct: {
+    retatrutide_20mg:30, retatrutide_box:30, tesamorelin_box:30, motsc_box:30,
+    ipamorelin_5mg_box:30, ghkcu_box:30, bpc_tb_box:30, nad_box:30,
+    selank_box:30, semax_box:30, epithalon_box:30,
+    retatrutide_pen_20mg:20
+  },
+  // productos que rotan en el anuncio de la portada: [id, nombre corto]
+  hero: [
+    ['retatrutide_20mg','Retatrutide 20mg'],
+    ['retatrutide_box','Retatrutide 10mg'],
+    ['retatrutide_pen_20mg','Retatrutide Plumilla'],
+    ['nad_box','NAD+ REDOX'],
+    ['bpc_tb_box','BPC-157 + TB-500'],
+    ['tesamorelin_box','Tesamorelin']
+  ]
+};
+const BF_ON = Date.now() < BF.fin;
+if (BF_ON) {
+  PRODUCTS.forEach(p => {
+    const pct = BF.pct[p.id];
+    if (!pct) return;
+    const base = p.antes || p.precio;
+    p.antes = base;
+    p.precio = Math.round(base * (100 - pct) / 100);
+    p._bf = pct;
+    // las promos por unidad (2ª/3ª con −20%) se pausan durante el Black Friday,
+    // y se quita su frase del final de la descripción
+    if (p.promo2x || p.promo3x) p.desc = p.desc.replace(/\s*Promo\b.*$/, '');
+    delete p.promo2x; delete p.promo3x;
+  });
+}
+
 /* ====================  STATE  ==================== */
 let cart = {}; // { id: qty }
 
@@ -279,7 +319,7 @@ function buildCard(p, idx){
         ${promoPillHTML(p)}
         <div class="card-foot">
           <div>
-            <small style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;${p.antes?'color:var(--gold-1);font-weight:800':'color:var(--muted)'}">${p.antes?'🔥 Oferta':'Desde'}</small>
+            <small style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;${p.antes?'color:var(--gold-1);font-weight:800':'color:var(--muted)'}">${p._bf?'Black Friday':(p.antes?'🔥 Oferta':'Desde')}</small>
             <div class="price">${p.antes?'<span class="price-old" style="text-decoration:line-through;text-decoration-color:#ff5757;text-decoration-thickness:2.5px;color:#cdbce4;font-size:.66em;font-weight:600;opacity:1;margin-right:5px">'+fmtCOP(p.antes)+'</span>':''}${fmtCOP(p.precio)}<small>COP</small></div>
           </div>
           <div style="display:flex;gap:8px;align-items:center">
@@ -356,7 +396,7 @@ async function renderProducts(filter){
   // 4. Render category header + grid with stagger
   // Orden: Combos primero → PrimeHack → FastMuscle
   const _catOrder = {Combo:0,'Caja Premium':1};
-  const list = PRODUCTS.filter(p => p.cat === filter)
+  const list = PRODUCTS.filter(p => filter === 'bf' ? !!p._bf : p.cat === filter)
     .sort((a,b) => (_catOrder[a.tag]!==undefined?_catOrder[a.tag]:2) - (_catOrder[b.tag]!==undefined?_catOrder[b.tag]:2));
   const meta = CAT_META[filter] || { label:filter, sub:'', icon:'' };
   viewport.innerHTML = `
@@ -415,10 +455,10 @@ function renderFeatured(){
         <img class="feat-card-img" src="${p.img}" alt="${p.nombre} ${p.presentacion}" loading="lazy" decoding="async" width="600" height="600">
       </div>
       <div class="feat-card-body">
-        <span class="feat-presentacion">${p.presentacion}</span>
+        <span class="feat-presentacion">${p._bf?'Black Friday −'+p._bf+'% · ':''}${p.presentacion}</span>
         <h3>${p.nombre}</h3>
         <p>${p.desc}</p>
-        <div class="price">${fmtCOP(p.precio)} <small>COP</small></div>
+        <div class="price">${p.antes?'<span class="price-old" style="text-decoration:line-through;text-decoration-color:#ff5757;text-decoration-thickness:2px;color:#cdbce4;font-size:.7em;font-weight:600;margin-right:6px">'+fmtCOP(p.antes)+'</span>':''}${fmtCOP(p.precio)} <small>COP</small></div>
         <div class="feat-card-actions">
           <button class="card-info-btn" onclick="event.stopPropagation();openDetail('${p.id}')" title="Ver más información" aria-label="Ver detalle del producto">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
@@ -651,7 +691,7 @@ function enviarPedido(e){
   msg += `\n\n*\ud83d\uded2 Productos (${totalItems})*`;
   items.forEach(([id,q]) => {
     const p = findP(id);
-    msg += `\n\u2022 ${p.nombre} (${p.presentacion}) \u00d7 ${q} = ${fmtCOP(p.precio*q)}`;
+    msg += `\n\u2022 ${p.nombre} (${p.presentacion}) \u00d7 ${q} = ${fmtCOP(p.precio*q)}${p._bf ? ' (Black Friday \u2212' + p._bf + '%)' : ''}`;
   });
   msg += `\n\n*\ud83d\udcb0 TOTAL: ${fmtCOP(total)} COP*`;
   msg += `\n\n_Enviado desde la tienda online de Aether Solutions._`;
@@ -675,6 +715,108 @@ function showToast(msg){
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
 }
+
+/* ====================  BLACK FRIDAY — portada, filtro y estilos (temporal)  ====================
+   Todo esto solo corre mientras BF_ON (hasta el 30-nov). El 1-dic la portada
+   vuelve a mostrar el carrusel original y desaparece el filtro "Black Friday". */
+function bfOpenCatalog(){
+  const sec = document.getElementById('catalogo');
+  if (_currentCat !== 'bf') renderProducts('bf');
+  if (sec) setTimeout(() => sec.scrollIntoView({behavior:'smooth', block:'start'}), 60);
+}
+if (BF_ON) (function(){
+  const st = document.createElement('style');
+  st.id = 'bf-css';
+  st.textContent = `
+.hero-showcase.is-bf{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.bf-head{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px;margin-bottom:-36px}
+.bf-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:#E8E4F0}
+.bf-brand img{width:36px;height:36px;border-radius:50%;border:1px solid rgba(244,201,93,.55);box-shadow:0 0 18px rgba(244,201,93,.25)}
+.bf-title{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1;letter-spacing:.16em;text-transform:uppercase;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.6)}
+.bf-big{display:flex;flex-direction:column;align-items:center;margin-top:10px;line-height:1}
+.bf-big span{font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;letter-spacing:.38em;text-transform:uppercase;color:#E8E4F0}
+.bf-big strong{display:block;margin:4px 0 6px;font-family:'Cinzel',serif;font-weight:700;font-size:clamp(84px,8.6vw,116px);line-height:.92;letter-spacing:-.01em;background:linear-gradient(180deg,#FFF1C4 0%,#F4C95D 48%,#C98E2B 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 8px 26px rgba(244,201,93,.25))}
+.bf-rule{width:140px;height:1px;margin:14px 0 10px;background:linear-gradient(90deg,transparent,rgba(244,201,93,.85),transparent)}
+.bf-lines{margin:0;font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;color:#E8E4F0}
+.bf-lines b{color:#F4C95D;font-weight:800}
+.bf-until{margin:6px 0 0;font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:#F4C95D}
+.hero-showcase.is-bf .showcase-stage{height:400px}
+.hero-showcase.is-bf .showcase-deck{width:300px;height:290px}
+.hero-showcase.is-bf .showcase-slide-img{max-width:280px;max-height:270px}
+.hero-showcase.is-bf .showcase-slide{pointer-events:none}
+.hero-showcase.is-bf .showcase-slide.is-active{pointer-events:auto;cursor:pointer}
+.bf-seal{position:absolute;top:6%;right:2%;z-index:3;display:grid;place-items:center;width:62px;height:62px;border-radius:50%;background:linear-gradient(180deg,#F3C858,#E5AB3E);color:#241400;font-family:'Manrope',sans-serif;font-size:17px;font-weight:800;letter-spacing:-.02em;box-shadow:0 6px 16px -4px rgba(0,0,0,.6)}
+.hero-showcase.is-bf .showcase-meta{font-size:13px;letter-spacing:.16em}
+.hero-showcase.is-bf .showcase-meta s{margin-right:8px;color:#cdbce4;text-decoration:line-through;text-decoration-color:#ff5757;text-decoration-thickness:2px}
+.filter-btn.filter-bf .dot{background:#F4C95D!important;box-shadow:0 0 8px rgba(244,201,93,.6)!important}
+#catalogo[data-cat=bf]{--cat-accent:224,169,59;--cat-accent-2:168,85,247}
+@media (max-width:980px){.hero-showcase.is-bf .showcase-stage{height:400px}}
+@media (max-width:560px){
+.bf-head{margin-bottom:-36px}
+.bf-title{font-size:30px}
+.bf-big strong{font-size:96px}
+.bf-lines{font-size:13px}
+.hero-showcase.is-bf .showcase-stage{height:340px}
+.hero-showcase.is-bf .showcase-deck{width:230px;height:230px}
+.hero-showcase.is-bf .showcase-slide-img{max-width:220px;max-height:220px}
+.bf-seal{width:52px;height:52px;font-size:15px}
+.hero-showcase.is-bf .showcase-name{font-size:18px}
+}`;
+  document.head.appendChild(st);
+
+  // Filtro "Black Friday" en el catálogo (va primero)
+  CAT_META.bf = {
+    label:'Black Friday',
+    sub:'Línea PrimeHack −30% · Retatrutide Plumilla −20% · solo hasta el 30 de noviembre',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>'
+  };
+  const filters = document.getElementById('filters');
+  if (filters) filters.insertAdjacentHTML('afterbegin', '<button class="filter-btn filter-bf" data-filter="bf" role="tab" aria-selected="false"><span class="dot"></span>Black Friday</button>');
+
+  // Botón de la portada → abre el catálogo en "Black Friday"
+  const ghost = document.querySelector('.hero-cta .btn-ghost');
+  if (ghost) {
+    ghost.textContent = 'Ver ofertas Black Friday';
+    ghost.addEventListener('click', e => { e.preventDefault(); bfOpenCatalog(); });
+  }
+
+  // Anuncio grande + productos en oferta en el carrusel de la portada
+  const hero = BF.hero.filter(([id]) => { const p = findP(id); return p && p._bf; });
+  const showcase = document.querySelector('.hero-showcase');
+  const stage = document.getElementById('showcaseStage');
+  if (!showcase || !stage || !hero.length) return;
+  const deck = stage.querySelector('.showcase-deck');
+  const dots = document.getElementById('showcaseDots');
+  const nameEl = document.getElementById('showcaseName');
+  const metaEl = document.getElementById('showcaseMeta');
+  const maxPct = Math.max(...Object.values(BF.pct));
+  showcase.classList.add('is-bf');
+  showcase.insertAdjacentHTML('afterbegin', `
+    <div class="bf-head">
+      <div class="bf-brand"><img src="img/img_0.webp" alt="" width="36" height="36"><span>Aether Solutions</span></div>
+      <div class="bf-title">Black Friday</div>
+      <div class="bf-big"><span>Hasta</span><strong>${maxPct}%</strong><span>de descuento</span></div>
+      <div class="bf-rule" aria-hidden="true"></div>
+      <p class="bf-lines">Línea PrimeHack <b>−30%</b> · Retatrutide Plumilla <b>−20%</b></p>
+      <p class="bf-until">Solo hasta el 30 de noviembre</p>
+    </div>`);
+  const meta = p => `<s>${fmtCOP(p.antes)}</s>${fmtCOP(p.precio)}`;
+  deck.innerHTML = hero.map(([id], k) => {
+    const p = findP(id);
+    return `<article class="showcase-slide${k ? '' : ' is-active'}" data-theme="gold"><img class="showcase-slide-img" src="${p.img}" alt="${p.nombre} ${p.presentacion}" decoding="async"${k ? '' : ' fetchpriority="high"'}><span class="bf-seal">−${p._bf}%</span></article>`;
+  }).join('');
+  deck.querySelectorAll('.showcase-slide').forEach((s, k) => {
+    const [id, corto] = hero[k];
+    const p = findP(id);
+    s.dataset.name = corto;
+    s.dataset.meta = meta(p);
+    s.addEventListener('click', () => openDetail(id));
+  });
+  if (dots) dots.innerHTML = hero.map(([, corto], k) => `<button class="showcase-dot${k ? '' : ' is-active'}" type="button" aria-label="${corto}" data-i="${k}"></button>`).join('');
+  stage.dataset.theme = 'gold';
+  if (nameEl) nameEl.textContent = hero[0][1];
+  if (metaEl) metaEl.innerHTML = meta(findP(hero[0][0]));
+})();
 
 /* ====================  FILTERS (toggle behavior)  ==================== */
 $$('#filters .filter-btn').forEach(btn => {
